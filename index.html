@@ -16,10 +16,18 @@
   </head>
     <body>
 <script>
+  
+  $('#button').datepicker()
+.on('changeDate', function(ev){
+    $('#button').datepicker('hide');
+    alert(ev.date.valueOf());
+});
+  
 $(document).ready(function(){
   $('.toast').toast('show');
 });
 </script>
+      
     </br>
       <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid bg-dark text-white">
@@ -67,7 +75,7 @@ $(document).ready(function(){
         
     <div class="bg-info bg-dark clearfix">
      <a <button type="button" float-left"  href="tel:+34647213345" style="padding:20px;">LLAMAR</button><i class="fas fa-phone-volume"></i></a> 
-      <button type="button" class="btn btn-secondary float-right">Pedir Cita</button>
+      <button type="button" class="btn btn-secondary float-right" id="button" data-date-format="yyyy-mm-dd" data-date="2019-04-25">Pedir Cita</button>
     </div>
       </div>
   </body>
